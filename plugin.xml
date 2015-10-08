@@ -101,7 +101,22 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/CDVConnection.h" />
         <source-file src="src/ios/CDVConnection.m" />
         <header-file src="src/ios/CDVReachability.h" />
-	    <source-file src="src/ios/CDVReachability.m" />
+        <source-file src="src/ios/CDVReachability.m" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+    </platform>
+
+    <!-- osx -->
+    <platform name="osx">
+        <config-file target="config.xml" parent="/*">
+            <feature name="NetworkStatus">
+                <param name="osx-package" value="CDVConnection" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/osx/CDVConnection.h" />
+        <source-file src="src/osx/CDVConnection.m" />
+        <header-file src="src/osx/CDVReachability.h" />
+	    <source-file src="src/osx/CDVReachability.m" />
 	    <framework src="SystemConfiguration.framework" weak="true" />
     </platform>
 
